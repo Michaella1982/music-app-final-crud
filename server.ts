@@ -22,9 +22,12 @@ import {join} from 'path';
 
 import * as mongoose from 'mongoose';
 import bodyParser from "body-parser";
-
+import { AlbumRoute } from './routes/album-route';
 
 // Express server
+
+const albumRoute: AlbumRoute = new AlbumRoute();
+console.log(albumRoute);
 
 const connectionString = 'mongodb+srv://coderGirl:launchCode@cluster0-eb43q.mongodb.net/coder_girl?retryWrites=true&w=majority';
 
@@ -38,6 +41,8 @@ const DIST_FOLDER = join(process.cwd(), 'dist/browser');
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const {AppServerModuleNgFactory, LAZY_MODULE_MAP, ngExpressEngine, provideModuleMap} = require('./dist/server/main');
+
+albumRoute.AlbumRoute(app);
 
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 app.engine('html', ngExpressEngine({
