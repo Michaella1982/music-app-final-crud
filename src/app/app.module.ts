@@ -21,7 +21,6 @@ import {
   MatFormFieldModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,8 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    FormsModule,
     HttpClientModule,
+    FormsModule, 
     AppRoutingModule,
     MatInputModule,
     ReactiveFormsModule,
