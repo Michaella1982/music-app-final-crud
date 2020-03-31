@@ -4,4 +4,6 @@ export class Album {
     artist: string;
     genre: string;
     yearReleased: Date;
+    label: string;
+    catalogNumber: Number;
   }

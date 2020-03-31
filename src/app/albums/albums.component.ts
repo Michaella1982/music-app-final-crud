@@ -9,7 +9,7 @@ import { Album } from '../album';
 })
 export class AlbumsComponent implements OnInit {
 
-  displayedColumns: string[] = ['title', 'artist'];
+  displayedColumns: string[] = ['title', 'artist', 'year','genre'];
   data: Album[] = [];
   isLoadingResults = true;
 
