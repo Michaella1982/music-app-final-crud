@@ -19,6 +19,8 @@ import {
   MatCardModule,
   MatFormFieldModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomePageComponent } from './home-page/home-page.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +28,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AlbumsComponent,
     ShowAlbumComponent,
     AddAlbumComponent,
-    EditAlbumComponent
+    EditAlbumComponent,
+    HomePageComponent, 
+    WishlistComponent
     
   ],
-  imports: [
+ imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     FormsModule, 

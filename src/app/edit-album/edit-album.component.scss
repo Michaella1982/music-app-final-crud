@@ -1,3 +1,20 @@
+$font-stack: Verdana;
+$primary-color:thistle;
+
+
+li{
+    padding-bottom: 10px;
+    font: 150% $font-stack;
+    text-align: center
+
+}
+
+
+.clickable{
+    cursor:pointer;
+}
+
+
 .example-container {
     position: relative;
     padding: 5px;

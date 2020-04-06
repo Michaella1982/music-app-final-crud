@@ -25,9 +25,11 @@ export class EditAlbumComponent implements OnInit {
   artist = '';
   genre = '';
   yearReleased = '';
+  label = '';
+  catalogNumber = '';
   isLoadingResults = false;
   matcher = new MyErrorStateMatcher();
-  getAlbum: any;
+ 
 
   constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) { }
 
@@ -35,12 +37,15 @@ export class EditAlbumComponent implements OnInit {
     this.getAlbum(this.route.snapshot.params.id);
     this.albumForm = this.formBuilder.group({
       'title' : [null, Validators.required],
-      'author' : [null, Validators.required],
+      'artist' : [null, Validators.required],
       'genre' : [null, Validators.required],
       'yearReleased' : [null, Validators.required],
+      'label' : [null, Validators.required],
+      'catalogNumber': [null, Validators.required]
+
     });
   }
-  getBook(id: any) {
+  getAlbum(id: any) {
     this.api.getAlbum(id).subscribe((data: any) => {
       this._id = data._id;
       this.albumForm.setValue({
@@ -48,6 +53,8 @@ export class EditAlbumComponent implements OnInit {
         artist: data.artist,
         genre: data.genre,
         yearReleased: data.yearReleased,
+        label: data.label,
+        catalogNumber: data.catalogNumber
       });
     });
   }

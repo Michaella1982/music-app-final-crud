@@ -4,9 +4,16 @@ import { AlbumsComponent } from './albums/albums.component';
 import { ShowAlbumComponent } from './show-album/show-album.component';
 import { AddAlbumComponent } from './add-album/add-album.component';
 import { EditAlbumComponent } from './edit-album/edit-album.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 
 const routes: Routes = [
+  {
+    path: '',
+    component: HomePageComponent, 
+    data: { title: 'home-page'}
+  },
   {
     path: 'albums',
     component: AlbumsComponent,
@@ -27,10 +34,10 @@ const routes: Routes = [
     component: EditAlbumComponent,
     data: { title: 'Edit Album' }
   },
-  { path: '',
-    redirectTo: '/albums',
-    pathMatch: 'full'
-  }
+  { path: 'wishlist',
+    component: WishlistComponent,
+    data: { title: 'Wishlist'}
+  },
 ];
 
 @NgModule({

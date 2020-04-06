@@ -6,7 +6,7 @@ const albumSchema: Schema = new Schema({
   genre: { type: String, required: true },
   releaseDate: { type: Date, default: Date.now },
   label: { type: String, required: true },
-  catalogNumber: { type: Number, required:true }
+  catalogNumber: { type: String, required:true }
 });
 
 export default mongoose.model('albums', albumSchema);

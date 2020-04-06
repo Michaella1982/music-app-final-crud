@@ -25,7 +25,7 @@ export class ApiService {
   getAlbums(): Observable<Album[]> {
     return this.http.get<Album[]>(apiUrl)
       .pipe(
-        tap(books => console.log('fetched Albums')),
+        tap(albums => console.log('fetched Albums')),
         catchError(this.handleError('getAlbums', []))
       );
   }
@@ -40,7 +40,7 @@ export class ApiService {
 
   addAlbum(album: Album): Observable<Album> {
     return this.http.post<Album>(apiUrl, album, httpOptions).pipe(
-      tap((bk: Album) => console.log(`added Album w/ id=${bk._id}`)),
+      tap((ab: Album) => console.log(`added Album w/ id=${ab._id}`)),
       catchError(this.handleError<Album>('addAlbum'))
     );
   }

@@ -1,0 +1,42 @@
+<div formArrayName="info">
+    <div *ngFor= "let info of infoForms.controls; let i=index" [formGroupName]="i"></div>
+
+    
+    <mat-card class="example-card">
+        <form [formGroup]="myForm" (ngSubmit)="onFormSubmit()">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Title" formControlName="title" [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!albumForm.get('title').valid && albumForm.get('title').touched">Please enter Album
+                        Title</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Artist" formControlName="artist" [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!albumForm.get('artist').valid && albumForm.get('artist').touched">Please enter
+                        Artist</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Genre" formControlName="genre" [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!albumForm.get('genre').valid && albumForm.get('genre').touched">Please enter
+                        Genre</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Notes" formControlName="notes" [errorStateMatcher]="matcher">
+                <mat-error>
+                    <span *ngIf="!albumForm.get('notes').valid && albumForm.get('notes').touched">Notes</span>
+                </mat-error>
+            </mat-form-field>
+            <div class="button-row">
+                <button mat-raised-button color="primary" [disabled]="!albumForm.valid" (click)="addPhone()">
+                    <mat-icon>submit</mat-icon>
+                </button>
+            </div>
+
+        </form>
+    </mat-card>
+</div>

@@ -25,6 +25,8 @@ export class AddAlbumComponent implements OnInit {
   artist = '';
   genre = '';
   yearReleased = '';
+  label = '';
+  catalogNumber = '';
   isLoadingResults = false;
   matcher = new MyErrorStateMatcher();
   
@@ -36,7 +38,10 @@ export class AddAlbumComponent implements OnInit {
         'title' : [null, Validators.required],
         'artist' : [null, Validators.required],
         'genre' : [null, Validators.required],
-        'yearReleased' : [null, Validators.required]
+        'yearReleased' : [null, Validators.required],
+        'label' : [null, Validators.required],
+        'catalogNumber': [null, Validators.required]
+
       });
     }
     onFormSubmit() {

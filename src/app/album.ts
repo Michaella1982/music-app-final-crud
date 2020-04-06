@@ -5,5 +5,5 @@ export class Album {
     genre: string;
     yearReleased: Date;
     label: string;
-    catalogNumber: Number;
+    catalogNumber: string;
   }

@@ -1,10 +1,8 @@
-$font-stack: Verdana;
-$primary-color: purple;
 
 
 li{
     padding-bottom: 10px;
-    font: 150% $font-stack;
+    font: 150% 
 
 }
 
@@ -62,7 +60,3 @@ table {
 .mat-flat-button {
   margin: 5px;
 }
-
-
-
-
